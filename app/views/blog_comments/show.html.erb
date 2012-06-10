@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @blog_comment.user %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @blog_comment.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @blog_comment.email %>
+</p>
+
+<p>
+  <b>Website:</b>
+  <%= @blog_comment.website %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @blog_comment.comment %>
+</p>
+
+<p>
+  <b>Parent comment:</b>
+  <%= @blog_comment.parent_comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_blog_comment_path(@blog_comment) %> |
+<%= link_to 'Back', blog_comments_path %>

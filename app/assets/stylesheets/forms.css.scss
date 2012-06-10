@@ -1,0 +1,109 @@
+// Place all the styles related to the public forms here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "imports";
+
+
+
+.form {
+  @include rounded;
+  display:block;
+  overflow:auto;
+  background:#cff;
+  width:$form_width;
+  min-height:200px;
+  float:right;
+  border:1px solid #000;
+  .field {
+    padding:5px 10px;
+  }
+  .row1 {
+    font-size:38px;
+    text-align:center;
+    width:$form_width - $padding * 2 ;
+    padding: $padding;
+  }
+  .row2 {
+    font-size:15px;
+ 
+    width:$form_width - $padding * 2 - $border ;
+    padding: $padding;
+    border:1px solid #000;
+    min-height:100px;
+    background:e8ffff;
+    position:relative;
+    left:  0 - $border;
+  }
+  .row3 {
+    font-size:16px;
+    text-align:center;
+    width:$form_width - $padding * 2;
+    padding: $padding;
+    min-height:50px;
+  }
+  .row {
+    textarea {
+      width:$form_width * .9;
+      height: 150px;
+    }
+    .field {
+      display:inline-block;
+      /*width:200px;
+      input {
+        width:180px; 
+        
+      } 
+      label {
+        width:180px;
+        
+      }
+      */
+    }
+  }
+  .row_small {
+    .field {
+      display:inline-block;
+      /*width:150px;
+      input {
+        width:140px;
+      }
+      label {
+        width:140px;   
+      }
+      */
+    }
+  }
+  .row_wide {
+    .input {
+      width:400px;
+      
+    }
+  }
+  .sentances {
+    .field {
+      margin-top:10px;
+      margin-bottom:10px;
+      font-size:12px;
+      display:block;
+      overflow:auto;
+      label {
+        display:inline;
+        float:left;
+      }
+      input {
+        float:right;
+        display:inline;
+        margin-right:10px;
+      }
+       
+    }
+  }
+  
+  
+}
+
+.form_column {
+  float:right;
+  overflow:auto;
+}

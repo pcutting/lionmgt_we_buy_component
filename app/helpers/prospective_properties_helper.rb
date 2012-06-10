@@ -1,0 +1,2 @@
+module ProspectivePropertiesHelper
+end

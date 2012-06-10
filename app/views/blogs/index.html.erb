@@ -1,0 +1,32 @@
+<h1>Lion Blogs</h1>
+
+<div class="blogs_index">
+  <div class="recent_articles">
+    <% @blogs.limit(3).each do |summary| %>
+      <div class="blog_summary">
+        <h2><%= summary.title %></h2>
+        <div class="article"><%= raw RedCloth.new(truncate(summary.content, :length => 700)).to_html  %><%= link_to "[More]", blog_path(summary) %></div>
+        <p>Author:<%= summary.author %>
+      </div>
+    <% end %>
+  </div>
+  <div class="sidebar">
+    <ol>
+      <% @blogs.each do |blog_sidebar| %>
+        <li>
+          <%= link_to blog_sidebar.title, blog_path(blog_sidebar) %> <%= blog_sidebar.created_at.to_s(:short) %>
+          <% if current_user %>
+            <%= link_to 'Edit', edit_blog_path(blog_sidebar) %>
+            <%= link_to 'Del', blog_sidebar, confirm: 'Are you sure?', method: :delete %>
+          <% end %>
+        </li>
+      <% end %>
+    </ol> 
+  </div>
+</div>
+
+
+ 
+
+
+<%= link_to 'New Blog', new_blog_path if current_user %>

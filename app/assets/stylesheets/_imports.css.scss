@@ -1,0 +1,26 @@
+
+
+$padding: 10px;
+$margin: 10px;
+$form_width: 400px;
+$border: 1px;
+$content_width:750px;
+
+$article_background:#B5CDF7;
+$background_color:#B5CDF7;
+
+@mixin center {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+$side: top;
+$radius: 10px;
+
+@mixin rounded($border-radius:$radius) {
+  -moz-border-radius: $border-radius;
+  border-radius: $border-radius;
+}
+
+
+

@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @lender.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @lender.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @lender.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @lender.phone %>
+</p>
+
+<p>
+  <b>Lent before on property:</b>
+  <%= @lender.lent_before_on_property %>
+</p>
+
+<p>
+  <b>How much can you lend:</b>
+  <%= @lender.how_much_can_you_lend %>
+</p>
+
+<p>
+  <b>What geographical area of interest:</b>
+  <%= @lender.what_geographical_area_of_interest %>
+</p>
+
+<p>
+  <b>How fast can you move funds:</b>
+  <%= @lender.how_fast_can_you_move_funds %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @lender.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_lender_path(@lender) %> |
+<%= link_to 'Back', lenders_path %>

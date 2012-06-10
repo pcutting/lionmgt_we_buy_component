@@ -1,0 +1,25 @@
+<div class="reply_body">
+  <div class="comment column">
+    <% if !comment.parent.blank? %>
+      <div class="parent_comment">
+        <%= comment.parent.name %> wrote:
+
+        <% c = truncate(h(comment.parent.comment), :length => 100) %>
+        <%= (RedCloth.new(c).to_html).html_safe %>
+        
+      </div>
+    <% end %>
+    <%=  RedCloth.new(h(comment.comment)).to_html.html_safe %>
+  </div>
+  
+  
+  <div class="avatar column">
+    <h3><%= comment.name %></h3>
+    Posted on: <%= comment.created_at.to_s(:short) %><br/>
+    <%  unless comment.website.blank? %>
+      <%= external_link_to comment.website, comment.website %>
+      <br/>
+    <% end %>
+    <%= link_to "Reply", "#", :id=>"comment_link_#{comment.id}" %>
+  </div>
+</div>

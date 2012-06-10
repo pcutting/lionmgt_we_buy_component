@@ -1,0 +1,55 @@
+<h1>Listing buyers</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Cell phone</th>
+    <th>Home phone</th>
+    <th>Areas of interest</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zipcode</th>
+    <th>Bedrooms</th>
+    <th>Baths</th>
+    <th>Price range</th>
+    <th>Referral</th>
+    <th>When to move in</th>
+    <th>Need financing</th>
+    <th>Monthly payment</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @buyers.each do |buyer| %>
+  <tr>
+    <td><%= buyer.first_name %></td>
+    <td><%= buyer.last_name %></td>
+    <td><%= buyer.email %></td>
+    <td><%= buyer.cell_phone %></td>
+    <td><%= buyer.home_phone %></td>
+    <td><%= buyer.areas_of_interest %></td>
+    <td><%= buyer.city %></td>
+    <td><%= buyer.state %></td>
+    <td><%= buyer.zipcode %></td>
+    <td><%= buyer.bedrooms %></td>
+    <td><%= buyer.baths %></td>
+    <td><%= buyer.price_range %></td>
+    <td><%= buyer.referral %></td>
+    <td><%= buyer.when_to_move_in %></td>
+    <td><%= buyer.need_financing %></td>
+    <td><%= buyer.monthly_payment %></td>
+    <td><%= buyer.comment %></td>
+    <td><%= link_to 'Show', buyer %></td>
+    <td><%= link_to 'Edit', edit_buyer_path(buyer) %></td>
+    <td><%= link_to 'Destroy', buyer, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Buyer', new_buyer_path %>

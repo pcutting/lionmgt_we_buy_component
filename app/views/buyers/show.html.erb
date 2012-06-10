@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @buyer.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @buyer.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @buyer.email %>
+</p>
+
+<p>
+  <b>Cell phone:</b>
+  <%= @buyer.cell_phone %>
+</p>
+
+<p>
+  <b>Home phone:</b>
+  <%= @buyer.home_phone %>
+</p>
+
+<p>
+  <b>Areas of interest:</b>
+  <%= @buyer.areas_of_interest %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @buyer.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @buyer.state %>
+</p>
+
+<p>
+  <b>Zipcode:</b>
+  <%= @buyer.zipcode %>
+</p>
+
+<p>
+  <b>Bedrooms:</b>
+  <%= @buyer.bedrooms %>
+</p>
+
+<p>
+  <b>Baths:</b>
+  <%= @buyer.baths %>
+</p>
+
+<p>
+  <b>Price range:</b>
+  <%= @buyer.price_range %>
+</p>
+
+<p>
+  <b>Referral:</b>
+  <%= @buyer.referral %>
+</p>
+
+<p>
+  <b>When to move in:</b>
+  <%= @buyer.when_to_move_in %>
+</p>
+
+<p>
+  <b>Need financing:</b>
+  <%= @buyer.need_financing %>
+</p>
+
+<p>
+  <b>Monthly payment:</b>
+  <%= @buyer.monthly_payment %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @buyer.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_buyer_path(@buyer) %> |
+<%= link_to 'Back', buyers_path %>

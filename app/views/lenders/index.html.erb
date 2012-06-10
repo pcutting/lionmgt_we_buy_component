@@ -1,0 +1,39 @@
+<h1>Listing lenders</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>Lent before on property</th>
+    <th>How much can you lend</th>
+    <th>What geographical area of interest</th>
+    <th>How fast can you move funds</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @lenders.each do |lender| %>
+  <tr>
+    <td><%= lender.first_name %></td>
+    <td><%= lender.last_name %></td>
+    <td><%= lender.email %></td>
+    <td><%= lender.phone %></td>
+    <td><%= lender.lent_before_on_property %></td>
+    <td><%= lender.how_much_can_you_lend %></td>
+    <td><%= lender.what_geographical_area_of_interest %></td>
+    <td><%= lender.how_fast_can_you_move_funds %></td>
+    <td><%= lender.comment %></td>
+    <td><%= link_to 'Show', lender %></td>
+    <td><%= link_to 'Edit', edit_lender_path(lender) %></td>
+    <td><%= link_to 'Destroy', lender, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Lender', new_lender_path %>

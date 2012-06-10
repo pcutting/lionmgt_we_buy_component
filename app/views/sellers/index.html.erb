@@ -1,0 +1,55 @@
+<h1>Listing sellers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Cell phone</th>
+    <th>Home phone</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zipcode</th>
+    <th>Bedrooms</th>
+    <th>Baths</th>
+    <th>Current market value</th>
+    <th>Liens against property</th>
+    <th>Referral</th>
+    <th>When to sell</th>
+    <th>Current on payments</th>
+    <th>Repairs needed</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sellers.each do |seller| %>
+  <tr>
+    <td><%= seller.name %></td>
+    <td><%= seller.email %></td>
+    <td><%= seller.cell_phone %></td>
+    <td><%= seller.home_phone %></td>
+    <td><%= seller.address %></td>
+    <td><%= seller.city %></td>
+    <td><%= seller.state %></td>
+    <td><%= seller.zipcode %></td>
+    <td><%= seller.bedrooms %></td>
+    <td><%= seller.baths %></td>
+    <td><%= seller.current_market_value %></td>
+    <td><%= seller.liens_against_property %></td>
+    <td><%= seller.referral %></td>
+    <td><%= seller.when_to_sell %></td>
+    <td><%= seller.current_on_payments %></td>
+    <td><%= seller.repairs_needed %></td>
+    <td><%= seller.comment %></td>
+    <td><%= link_to 'Show', seller %></td>
+    <td><%= link_to 'Edit', edit_seller_path(seller) %></td>
+    <td><%= link_to 'Destroy', seller, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Seller', new_seller_path %>

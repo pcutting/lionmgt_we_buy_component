@@ -1,0 +1,203 @@
+<%= nested_form_for(@contact) do |f|  %>
+  <div class="name section">
+    <div class="field">
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="field">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name%>
+    </div>
+    <div class="field">
+      <%= f.label :nickname %>
+      <%= f.text_field :nickname%>
+    </div>
+  </div>
+  
+  <div class="emails section">
+    <h2>Emails</h2>
+    <%= f.fields_for :contact_emails do |contact_email| %>
+      <div class="section">
+        <div class="field">
+          <%= contact_email.label :label %>
+          <%= contact_email.select :label, Label.where(:group => "all").select(:description).order(:position).map {|label| label.description} %>
+        </div>
+        <div class="field">
+          <%= contact_email.label :email %>
+          <%= contact_email.text_field :email %>
+        </div>
+        <div class="remove_button left">
+          <%= contact_email.link_to_remove "Remove" %>
+        </div>
+      </div>  
+    <% end %>  
+  </div>
+  <div class="clear">
+    <%= f.link_to_add "+ Add an Email", :contact_emails, :class => "button clear" %>
+  </div>
+
+  <div class="phones section">
+    <h2>Phones</h2>
+    <%= f.fields_for :contact_phones do |contact_phone| %>
+      <div class="field">
+        <%= contact_phone.label :label %>
+        <%= contact_phone.select :label, Label.where(:group => "all").select(:description).order(:position).map {|label| label.description}%>
+      </div>
+      <div class="field">
+        <%= contact_phone.label :phone %>
+        <%= contact_phone.text_field :phone, :size=> 10 %>
+      </div>
+      <!-- div class="field">
+        <%= contact_phone.label :ext %>
+        <%= contact_phone.text_field :ext, :size=> 5 %>
+      </div>
+      <div class="field">
+        <%= contact_phone.label :code %>
+        <%= contact_phone.text_field :code, :size=> 5 %>
+      </div>
+      <div class="field">
+        <%= contact_phone.label :country %>
+        <%= contact_phone.text_field :country %>
+      </div>
+      <div class="field">
+        <%= contact_phone.label :country_code %>
+        <%= contact_phone.text_field :country_code, :size=> 3 %>
+      </div-->
+      <div class="remove_button left ">
+        <%= contact_phone.link_to_remove "Remove" %>
+      </div>
+      <div class="clear"></div>
+    <div class="clear"></div>
+    <% end %>
+    <%= f.link_to_add "+ Add a Number", :contact_phones, :class => "button clear" %>
+  </div>
+  
+  
+  <div class="addresses section">
+    <h2>Addresses</h2>
+    <%= f.fields_for :contact_addresses do |contact_address| %>
+      <div class="block clear">
+        <div class="field clear">
+          <%= contact_address.label :label, "Label(Home, Work, Office, Favorite Cafe..)" %>
+          <%= contact_address.select :label, Label.where(:group => "all").select(:description).order(:position).map {|label| label.description}%>
+        </div> 
+        <div class="field clear">
+          <%= contact_address.label :address1  %>
+          <%= contact_address.text_field :address1 %>
+        </div> 
+        <div class="field clear">
+          <%= contact_address.label :address2 %>
+          <%= contact_address.text_field :address2 %>
+        </div>
+        <div class="field clear">
+          <%= contact_address.label :city %>
+          <%= contact_address.text_field :city %>
+        </div>
+        <div class="field">
+          <%= contact_address.label :state %>
+          <%= contact_address.text_field :state %>
+        </div>
+        <div class="field">
+          <%= contact_address.label :zipcode %>
+          <%= contact_address.text_field :zipcode %>
+        </div>
+        <div class="field clear">
+          <%= contact_address.label :country %>
+          <%= contact_address.text_field :country %>
+        </div> 
+        <div class="field">
+          <%= contact_address.label :kind, "Kind(private or business address)" %>
+          <%= contact_address.text_field :kind %>
+        </div>
+        
+        <div class="remove_button clear">
+          <%= contact_address.link_to_remove "Remove" %>
+          <div class="clear"></div>
+        </div>
+        
+        <div class="clear"></div>
+      </div>
+    <% end %>
+    <div class="clear"></div>
+    <%= f.link_to_add "+ Add an Address", :contact_addresses, :class => "button clear" %>
+  </div>
+      
+      
+  <div class="dates section">
+    <h2>Dates</h2>
+    <%= f.fields_for :contact_dates do |contact_date| %>
+      <div class="field">
+        <%= contact_date.label :label %>
+        <%= contact_date.select :label, Label.where(:group => "all").select(:description).order(:position).map {|label| label.description} %>
+      </div>
+      <div class="field">
+        <%= contact_date.label :date %>
+        <%= contact_date.datetime_select :date %>
+      </div>
+      <div class="remove_button left">
+        <%= contact_date.link_to_remove "Remove" %>
+      </div>
+      <div class="clear"></div>
+    <% end %>
+  </div>
+  <div class="clear">
+    <%= f.link_to_add "+ Add a Date", :contact_dates, :class => "button clear" %>
+  </div>
+
+  <div class="websites section">
+    <h2>Websites</h2>
+    <%= f.fields_for :contact_websites do |contact_website| %>
+      <div class="section">
+        <div class="field">
+          <%= contact_website.label :label %>
+          <%= contact_website.select :label, Label.where(:group => "all").select(:description).order(:position).map {|label| label.description} %>
+        </div>
+        <div class="field">
+          <%= contact_website.label :website %>
+          <%= contact_website.text_field :website %>
+        </div>
+        <div class="field">
+          <%= contact_website.label :comment %>
+          <%= contact_website.text_field :comment %>
+        </div>
+        <div class="remove_button left">
+          <%= contact_website.link_to_remove "Remove" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="clear">
+    <%= f.link_to_add "+ Add a Website", :contact_websites, :class => "button clear" %>
+  </div>
+
+        
+        
+  <div class="notes section">
+    <h2>Notes(Private)</h2>
+    <%= f.fields_for :contact_notes do |contact_note| %>
+      <div class="section">
+        <div class="field left">
+          <%= contact_note.label :label %>
+          <%= contact_note.select :label, Label.where(:group => "all").select(:description).order(:position).map {|label| label.description} %>
+        </div>
+        <div class="field left">
+          <%= contact_note.label :reminder %>
+          <%= contact_note.datetime_select :reminder %>
+        </div>
+        <div class="field clear">
+          <%= contact_note.label :note %>
+          <%= contact_note.text_area :note %>
+        </div>
+        <div class="remove_button clear">
+          <%= contact_note.link_to_remove "Remove"%> 
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="clear">
+    <%= f.link_to_add "+ Add a Note", :contact_notes, :class => "button clear" %>
+  </div>
+      
+
+  <%= submit_tag ("Submit") %>
+<% end %>

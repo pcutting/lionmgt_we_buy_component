@@ -1,0 +1,81 @@
+<h1>Listing borrowers</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Cell phone</th>
+    <th>Home phone</th>
+    <th>Address</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Market value</th>
+    <th>Property address</th>
+    <th>Bedrooms</th>
+    <th>Baths</th>
+    <th>Current market value</th>
+    <th>Liens against property</th>
+    <th>Description</th>
+    <th>Under contract</th>
+    <th>Referral</th>
+    <th>Closing date</th>
+    <th>Repairs needed</th>
+    <th>Purchase price</th>
+    <th>Exit strategy</th>
+    <th>Loan type requesting</th>
+    <th>Gross monthly income</th>
+    <th>Loan amount requested</th>
+    <th>Length of term anticipated</th>
+    <th>Property info</th>
+    <th>Loan summary overview</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @borrowers.each do |borrower| %>
+  <tr>
+    <td><%= borrower.first_name %></td>
+    <td><%= borrower.last_name %></td>
+    <td><%= borrower.email %></td>
+    <td><%= borrower.cell_phone %></td>
+    <td><%= borrower.home_phone %></td>
+    <td><%= borrower.address %></td>
+    <td><%= borrower.address2 %></td>
+    <td><%= borrower.city %></td>
+    <td><%= borrower.state %></td>
+    <td><%= borrower.zip %></td>
+    <td><%= borrower.market_value %></td>
+    <td><%= borrower.property_address %></td>
+    <td><%= borrower.bedrooms %></td>
+    <td><%= borrower.baths %></td>
+    <td><%= borrower.current_market_value %></td>
+    <td><%= borrower.liens_against_property %></td>
+    <td><%= borrower.description %></td>
+    <td><%= borrower.under_contract %></td>
+    <td><%= borrower.referral %></td>
+    <td><%= borrower.closing_date %></td>
+    <td><%= borrower.repairs_needed %></td>
+    <td><%= borrower.purchase_price %></td>
+    <td><%= borrower.exit_strategy %></td>
+    <td><%= borrower.loan_type_requesting %></td>
+    <td><%= borrower.gross_monthly_income %></td>
+    <td><%= borrower.loan_amount_requested %></td>
+    <td><%= borrower.length_of_term_anticipated %></td>
+    <td><%= borrower.property_info %></td>
+    <td><%= borrower.loan_summary_overview %></td>
+    <td><%= borrower.comment %></td>
+    <td><%= link_to 'Show', borrower %></td>
+    <td><%= link_to 'Edit', edit_borrower_path(borrower) %></td>
+    <td><%= link_to 'Destroy', borrower, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Borrower', new_borrower_path %>

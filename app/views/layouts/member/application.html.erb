@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Realestate</title>
+  <meta name="description" content="Investment Realestate solutions for Financing, Management Software and Portfolios">
+  
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  
+  <%= render :partial => "layouts/analytics" %>
+</head>
+<body>
+
+  <ul class="hmenu">
+    <%= render 'shared/navigation' %>
+  </ul>
+  <%= render :partial => "layouts/admin_menu" %><br/>
+  <%= render :partial => "layouts/menu" %>
+  
+  <%- flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+  <%- end -%>
+<%= yield %>
+
+
+
+
+</body>
+
+
+
+</html>

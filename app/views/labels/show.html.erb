@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @label.description %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @label.position %>
+</p>
+
+<p>
+  <b>Group:</b>
+  <%= @label.group %>
+</p>
+
+
+<%= link_to 'Edit', edit_label_path(@label) %> |
+<%= link_to 'Back', labels_path %>

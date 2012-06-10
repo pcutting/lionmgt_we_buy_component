@@ -1,0 +1,93 @@
+// Place all the styles related to the borrowers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "imports";
+
+$form_width: 1100px;
+
+.borrower_form {
+  @include center;
+  display:border;
+  overflow:hidden;
+  background:#cff;
+  width:$form_width;
+  min-height:200px;
+  border:1px solid #000;
+  .row1 {
+    font-size:16px;
+    text-align:center;
+    width:$form_width - $padding * 2 ;
+    padding: $padding;
+  }
+  .row2 {
+    font-size:16px;
+ 
+    width:$form_width - $padding * 2 - $border ;
+    padding: $padding;
+    border:1px solid #000;
+    min-height:100px;
+    background:e8ffff;
+    position:relative;
+    left:  0 - $border;
+  }
+  .row3 {
+    font-size:16px;
+    text-align:center;
+    width:$form_width - $padding * 2;
+    padding: $padding;
+    min-height:50px;
+  }
+  .row {
+    display:block;
+    overflow:auto;
+    .field {
+      display:inline;
+      float:left;
+    }
+  }
+  .field {
+    display:block;
+    input {
+      
+    }
+    textarea {
+      height: 150px;
+    }
+    label {
+      
+    }
+    .row {
+      display:block;
+      overflow:auto;
+    }
+  }
+  fieldset.skinny {
+    display:block;
+    float:none;
+    overflow:auto;
+    width:400px;
+    .field {
+      display:block;
+      float:none;
+      
+    }
+    .row {
+      display:block;
+      overflow:auto;
+      .field {
+        display:block;
+        float:left;
+      }
+  }
+    
+  }
+  
+  .field {
+    margin:$margin;
+    }
+    
+  
+  
+
+}

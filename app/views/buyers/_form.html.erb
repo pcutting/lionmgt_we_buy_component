@@ -1,0 +1,85 @@
+<%= form_for(@buyer) do |f| %>
+  <% if @buyer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@buyer.errors.count, "error") %> prohibited this buyer from being saved:</h2>
+
+      <ul>
+      <% @buyer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :cell_phone %><br />
+    <%= f.text_field :cell_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :home_phone %><br />
+    <%= f.text_field :home_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :areas_of_interest %><br />
+    <%= f.text_area :areas_of_interest %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zipcode %><br />
+    <%= f.text_field :zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label :bedrooms %><br />
+    <%= f.text_field :bedrooms %>
+  </div>
+  <div class="field">
+    <%= f.label :baths %><br />
+    <%= f.text_field :baths %>
+  </div>
+  <div class="field">
+    <%= f.label :price_range %><br />
+    <%= f.text_field :price_range %>
+  </div>
+  <div class="field">
+    <%= f.label :referral %><br />
+    <%= f.text_field :referral %>
+  </div>
+  <div class="field">
+    <%= f.label :when_to_move_in %><br />
+    <%= f.text_field :when_to_move_in %>
+  </div>
+  <div class="field">
+    <%= f.label :need_financing %><br />
+    <%= f.check_box :need_financing %>
+  </div>
+  <div class="field">
+    <%= f.label :monthly_payment %><br />
+    <%= f.text_field :monthly_payment %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_area :comment %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

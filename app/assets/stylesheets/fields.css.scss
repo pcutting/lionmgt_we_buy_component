@@ -1,0 +1,61 @@
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$short_size: 35px;
+$long_size: 80px;
+$standard_size: 50px;
+
+.field{
+float:left;
+}
+
+.field label {
+display:block;
+font-wieght:bold;
+}
+
+.field input {
+}
+
+.field textarea {
+width:600px;
+height:75px;
+}
+
+
+.field_cell {
+float:left;
+overflow:hidden;
+}
+
+.field_row {
+  .field_cell{
+    width:$standard_size;  
+    input, select {
+      border:1px solid black;
+      width: $standard_size;
+    }
+  }
+    
+  .long {
+    @extend .field_cell;
+    width: $long_size;
+    input, select {
+      border:1px solid black;
+      width: $long_size;
+    }
+  }  
+  
+  .short {
+    @extend .field_cell;
+    width: $short_size;
+    input, select {
+      border:1px solid black;
+      width: $short_size;
+    }  
+  }
+  clear:both;
+  
+}
+
+

@@ -1,0 +1,63 @@
+<h1>Listing prospective_properties</h1>
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Bedrooms</th>
+    <th>Bathrooms</th>
+    <th>Price</th>
+    <th>Squareft</th>
+    <th>Rentometer</th>
+    <th>Year built</th>
+    <th>Interest</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>User</th>
+    <th>Source</th>
+    <th>Taxes</th>
+    <th>Contact</th>
+    <th>Arv</th>
+    <th>Max</th>
+    <th>Repair estimate</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @prospective_properties.each do |prospective_property| %>
+  <tr>
+    <td><%= prospective_property.address %></td>
+    <td><%= prospective_property.city %></td>
+    <td><%= prospective_property.state %></td>
+    <td><%= prospective_property.zip %></td>
+    <td><%= prospective_property.bedrooms %></td>
+    <td><%= prospective_property.bathrooms %></td>
+    <td><%= prospective_property.price %></td>
+    <td><%= prospective_property.squareft %></td>
+    <td><%= prospective_property.rentometer %></td>
+    <td><%= prospective_property.year_built %></td>
+    <td><%= prospective_property.interest %></td>
+    <td><%= prospective_property.latitude %></td>
+    <td><%= prospective_property.longitude %></td>
+    <td><%= prospective_property.user %></td>
+    <td><%= prospective_property.source %></td>
+    <td><%= prospective_property.taxes %></td>
+    <td><%= prospective_property.contact %></td>
+    <td><%= prospective_property.arv %></td>
+    <td><%= prospective_property.max %></td>
+    <td><%= prospective_property.repair_estimate %></td>
+    <td><%= prospective_property.comment %></td>
+    <td><%= link_to 'Show', prospective_property %></td>
+    <td><%= link_to 'Edit', edit_prospective_property_path(prospective_property) %></td>
+    <td><%= link_to 'Destroy', prospective_property, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Prospective property', new_prospective_property_path %>

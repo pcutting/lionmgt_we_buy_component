@@ -1,0 +1,87 @@
+<p id="notice"><%= notice %></p>
+
+<div class = "blog_article">
+  <div class="row title">
+    <p>
+      <b>Title:</b>
+      <%= @blog.title %>
+    </p>
+    <p>
+      <b>Author:</b>
+      <%= @blog.author %>
+    </p>
+    <p>
+      <b>Written on:</b>
+      <%= @blog.created_at.to_s(:short) %>
+    </p>
+  </div>
+
+
+
+  <div class="row">
+    <div class="article">
+      <%= raw RedCloth.new(@blog.content).to_html %>
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <p>
+      <b>Category:</b>
+      <%= @blog.category %>
+    </p>
+    <p>
+      <b>Topic:</b>
+      <%= @blog.topic %>
+    </p>
+  </div>
+</div>
+
+
+
+<% unless @comments.blank? %>
+  <h2>Comments:</h2>
+  <ol class="comments">
+    <% @comments.each do |comment| %>
+      <li>
+        <%= raw print_comment_replies(comment) %>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
+
+<hr/>
+
+<%= form_for @comment, :url => { :controller => "blogs", :action => "comment" } do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:
+      </h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %><br/>
+  
+  <%= f.label :email %><br/>
+  <%= f.text_field :email %><br/>
+  
+  <%= f.label :website %><br/>
+  <%= f.text_field :website %><br/>
+  
+  <%= f.label :comment %>(Can use <%= link_to "Textile", "http://redcloth.org/textile", :target => "new" %> formating.)<br/>
+  <%= f.text_area :comment, :size=>"80x8" %><br/>
+  
+  <%= f.submit %><br/>
+
+<% end %>
+
+<%= link_to 'Edit', edit_blog_path(@blog) if current_user %> |
+<%= link_to 'Back', blogs_path %>

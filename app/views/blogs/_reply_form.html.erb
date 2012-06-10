@@ -1,0 +1,48 @@
+<div class="reply" id="reply_comment_<%= comment.id %>" >
+  <script> 
+    $(document).ready(function() {
+      return $('#comment_link_<%= comment.id %>').click(function(e) {
+        $('#reply_comment_<%= comment.id %>').show();
+        return e.preventDefault();
+      });
+    });
+  </script>
+
+
+
+  <%= form_for @comment, :url => { :controller => "blogs", :action => "reply" } do |f| %>
+    <% if @comment.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:
+        </h2>
+
+        <ul>
+        <% @comment.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.hidden_field :comment_id, :value => comment.id %>
+    
+    <div class="field">
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %><br/>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br/>
+      <%= f.text_field :email %><br/>
+    </div>
+    <div class="field">
+      <%= f.label :website %><br/>
+      <%= f.text_field :website %><br/>
+    </div>
+    <div class="field">
+      <%= f.label :comment %><br/>
+      <%= f.text_area :comment, :size=>"60x7" %><br/>
+    </div>
+   
+    <%= f.submit %><br/>
+  <% end %> 
+</div>

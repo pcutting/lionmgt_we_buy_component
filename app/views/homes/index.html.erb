@@ -1,0 +1,68 @@
+<div id="home_index_content" class="content">
+  <div class="section">
+    <div class="column">
+      <div class="youtube">
+        YOUTube
+      </div>
+    </div>
+    <div class="form">
+      <%= form_for @prospect, :url => {:controller => "homes", :action=>"create" } do |f| %>
+      <div class="row1">
+        Fill out the form to get a Free Report and Access to Your Video Report
+      </div>
+      <div class="row2">
+          <div class="row">
+            <div class="field">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name %>
+            </div>
+            <div class="field">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <%= f.label :phone %>
+              <%= f.text_field :phone %>
+            </div>
+          
+            <div class="field">
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+            </div>
+          </div>
+          <div class="row_wide">
+            <div class="field">
+            <%= radio_button_tag(:choice, "sell")%>
+            <%= label_tag(:choice_sell, "I want to Sell my property.") %>
+          </div>
+          </div>
+          <div class="row_wide">
+            <div class="field">
+            <%= radio_button_tag(:choice, "buy")%>
+            <%= label_tag(:choice_buy, "I want to Buy a home or investment property.") %>
+          </div>
+          </div>
+          <div class="row_wide">
+            <div class="field">
+              <%= radio_button_tag(:choice, "borrow")%>
+              <%= label_tag(:choice_borrow, "I have a great deal and want to Borrow some funds.") %>
+            </div>
+          </div>
+          <div class="row_wide">
+            <div class="field">
+              <%= radio_button_tag(:choice, "lend")%>
+              <%= label_tag(:choice_lend, "I want to learn about lending to get a higher return.") %>
+            </div>
+          </div>
+         
+      </div>
+      <div class="row3">
+        <%= f.submit "Submit" %>
+      </div>
+      
+      <% end %>
+    </div>
+  </div>
+</div>
