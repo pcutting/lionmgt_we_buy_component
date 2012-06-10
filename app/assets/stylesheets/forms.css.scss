@@ -9,7 +9,7 @@
 .form {
   @include rounded;
   display:block;
-  overflow:auto;
+  overflow:hidden;
   background:#cff;
   width:$form_width;
   min-height:200px;
@@ -19,13 +19,13 @@
     padding:5px 10px;
   }
   .row1 {
-    font-size:38px;
+    font-size:24px;
     text-align:center;
     width:$form_width - $padding * 2 ;
     padding: $padding;
   }
   .row2 {
-    font-size:15px;
+    font-size:13px;
  
     width:$form_width - $padding * 2 - $border ;
     padding: $padding;

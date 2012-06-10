@@ -4,9 +4,13 @@
 
 
 
-.form_size, .form_width {width:$form_width;}
+.form_size, .form_width {
+  width:$form_width;
+}
 
-.hide {display:none;}
+.hide {
+  display:none;
+}
 
 .right {  
   float:right; 
@@ -14,7 +18,7 @@
 }
 
 #contents {
-  width:1200px;
+  width:$page_width;
   @include center;
   background:#fff;
   .section {
@@ -29,10 +33,10 @@
   
   overflow:auto;
   .youtube {
-    width:400px;
-    min-height:100px;
-    background:$article_background;
-    display:block;
+    
+    
+    
+    display:inline;
     @include center;
     margin:$margin;
   }
@@ -77,11 +81,11 @@
   .menu {
     background:#9cf;
     height:40px;
-    width:1180px;
+    width:$page_width - $margin *2;
     margin:0 0 5px 0;
     padding: 10px;
     color:#fff;
-    font-size:16px;
+    font-size:14px;
     font-weight: bold;
     text-align: center;
     ul {
@@ -134,8 +138,7 @@
       margin-right:10px;
       margin-top:10px;
       float:right;
-      text-align:right;
-      font-size:14px;
+      
     }
     input {
       width:120px;
