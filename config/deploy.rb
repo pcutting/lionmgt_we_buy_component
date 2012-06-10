@@ -50,7 +50,7 @@ end
 
 
 
-#after 'deploy:update_code', 'deploy:symlink'#,  'deploy:precompile'
+after 'deploy:update_code', 'deploy:symlink',  'deploy:precompile'
 
 
 
