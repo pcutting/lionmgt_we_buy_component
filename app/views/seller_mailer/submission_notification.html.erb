@@ -1,3 +1,5 @@
-SellerMailer#submission_notification
 
-<%= @greeting %>, find me in app/views/app/views/seller_mailer/submission_notification.text.erb
+There was a seller submittion: <%= Time.now.to_s(:short) %><br/>
+<pre>
+<%= @seller.to_yaml %>
+</pre>

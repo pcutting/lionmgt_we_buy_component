@@ -1,0 +1,119 @@
+<div class="row1">
+  Fast Response Form
+</div>
+<%= form_for(@seller) do |f| %>
+
+  <% if @seller.errors.any? %>
+    <div class="row2">
+      <div id="error_explanation">
+        <h2><%= pluralize(@seller.errors.count, "error") %> are preventing your submission.  Please fill out the highlighted fields so that can contact you and start our research:</h2>
+
+        <ul>
+        <% @seller.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+  <div class="row2">
+    <div class="row">
+      <div class="field">
+        <%= f.label :first_name %><br />
+        <%= f.text_field :first_name,:size => 10 %>
+      </div>
+      <div class="field">
+        <%= f.label :last_name %><br />
+        <%= f.text_field :last_name,:size => 10  %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.text_field :email,:size => 10  %>
+      </div>
+      <div class="field">
+        <%= f.label :cell_phone %><br />
+        <%= f.text_field :cell_phone,:size => 10  %>
+      </div>
+    </div>
+    <div class="row_wide">
+      <div class="field">
+        <%= f.label :address %><br />
+        <%= f.text_field :address %>
+      </div>
+    </div>
+    <div class="row_small">
+      <div class="field">
+        <%= f.label :city %><br />
+        <%= f.text_field :city,:size => 10  %>
+      </div>
+      <div class="field">
+        <%= f.label :state %><br />
+        <%= f.text_field :state,:size => 3 %>
+      </div>
+      <div class="field">
+        <%= f.label :zipcode %><br />
+        <%= f.text_field :zipcode,:size => 5 %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <%= f.label :bedrooms %><br />
+        <%= f.text_field :bedrooms,:size => 4 %>
+      </div>
+      <div class="field">
+        <%= f.label :baths %><br />
+        <%= f.text_field :baths,:size => 4 %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <%= f.label :current_market_value %><br />
+        <%= f.text_field :current_market_value,:size => 14  %>
+      </div>
+      <div class="field">
+        <%= f.label :liens_against_property %><br />
+        <%= f.text_field :liens_against_property,:size => 14  %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <%= f.label :when_to_sell %><br />
+        <%= f.text_field :when_to_sell,:size => 10  %>
+      </div>
+      <div class="field">
+        <%= f.label :current_on_payments %><br />
+        <%= f.text_field :current_on_payments,:size => 10  %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <%= f.label :repairs_needed %><br />
+        <%= f.text_field :repairs_needed,:size => 10  %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <%= f.label :comment, "Any important details:" %><br />
+        <%= f.text_area :comment,:size => "25x3" %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <%= f.label :referral, "Referred By:" %><br />
+        <%= f.text_field :referral,:size => 10  %>
+      </div>
+      <div class="field">
+        <%= f.label :on_mls, "Is House on MLS?" %>
+        <%= f.check_box :on_mls %>
+      </div>
+    </div>
+  </div>
+  <div class="row3">
+    <div class="actions">
+      <%= f.submit "Make me an offer" %>
+    </div>
+  </div>
+<% end %>

@@ -69,5 +69,9 @@ class HomesController < ApplicationController
     
   end
   
+  def thankyou_webuy
+  
+  end
+  
 
 end

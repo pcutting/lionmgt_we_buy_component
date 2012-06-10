@@ -1,3 +1,20 @@
+<table style="margin: 2px 0;">
+<tr>
+<td>
+  <%= image_tag(attachments["mini_lion_logo"].url, :width=> "100px") %>
+</td>
+<td style="text-align:right; margin: 0 10px 0 30px;">
+  Phil Cutting<br/>
+  Investor, Commercial Financier & Real Estate Consultant<br/>
+  (t) (614)358-1944<br/>
+  phil@lionMGT.com
+</td>
+<td>
+  <%= image_tag attachments["phil_face"].url, :width => "80" %>
+</td>
+</tr>
+</table>
+
 <p>Dear <%= @seller.first_name.capitalize %>,</p>
 
 <p>Thank you for submitting your property at <%= @seller.address %></p>

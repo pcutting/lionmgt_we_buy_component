@@ -1,5 +1,5 @@
 class SellerMailer < ActionMailer::Base
-  default from: "phil@lionmgt.com"
+  default from: "phil@nevie.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -7,19 +7,22 @@ class SellerMailer < ActionMailer::Base
   #   en.seller_mailer.submission_confirmation.subject
   #
   def submission_confirmation(seller)
-    @greeting = "Hi"
+    @seller = seller     
     
-    mail to: "seller.email", :subject => "Thank you for submitting your property to Lion MGT"
+    attachments.inline['phil_face'] = {:data => File.read("#{Rails.root.to_s + '/app/assets/images/phil_face.jpg'}"),:mime_type => "image/jpg"}
+    attachments.inline['mini_lion_logo'] = {:data => File.read("#{Rails.root.to_s + '/app/assets/images/mini_lion_logo.png'}"),:mime_type => "image/png"}
+                                 
+    mail to: seller.email, subject: "Thank you for submitting your property to Lion MGT"
+    
   end
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.seller_mailer.submission_notification.subject
-  #
   def submission_notification(seller)
-    @greeting = "Hi"
-
-    mail to: "to@example.org", :subject => "Notification: LionMGT.com - Seller submition #{Time.now.to_s(:short)}"
+    @seller = seller
+    mail to: "phil@nevie.com", :subject => "Notification: LionMGT.com - Seller submition #{Time.now.to_s(:short)}"
+  end
+  
+  def submission_attempt_notification(seller)
+    @seller = seller
+    mail to: "phil@nevie.com", :subject => "Notification: LionMGT.com - Seller failed submition #{Time.now.to_s(:short)}"
   end
 end

@@ -64,12 +64,34 @@ Realestate::Application.configure do
   
   
   #https://github.com/RailsApps/rails3-devise-rspec-cucumber/wiki/Tutorial
-  config.action_mailer.default_url_options = { :host => 'yourhost.com' }
+  #config.action_mailer.default_url_options = { :host => 'yourhost.com' }
 # ActionMailer Config
 # Setup for production - deliveries, no errors raised
+#config.action_mailer.delivery_method = :smtp
+#config.action_mailer.perform_deliveries = true
+#config.action_mailer.raise_delivery_errors = false
+#config.action_mailer.default :charset => "utf-8"
+
+
+# Don't care if the mailer can't send
+config.action_mailer.raise_delivery_errors = true
+
+# Change mail delvery to either :smtp, :sendmail, :file, :test
 config.action_mailer.delivery_method = :smtp
-config.action_mailer.perform_deliveries = true
-config.action_mailer.raise_delivery_errors = false
-config.action_mailer.default :charset => "utf-8"
+config.action_mailer.smtp_settings = {
+  address: "smtp.gmail.com",
+  port: 587,
+  domain: "lionmgt.com",
+  authentication: "plain",
+  enable_starttls_auto: true,
+  user_name: "cuttingphilip@gmail.com",
+  password: "sprint102"
+}
+
+# Specify what domain to use for mailer URLs
+config.action_mailer.default_url_options = {host: "http://lionmgt.com"}
+
+
+config.action_mailer.asset_host = "http://lionmgt.com"
 
 end

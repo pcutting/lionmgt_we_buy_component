@@ -5,6 +5,7 @@ Realestate::Application.routes.draw do
   match "WEBUY" => "sellers#new"
   match "Webuy" => "sellers#new"
   match "WEBuy" => "sellers#new"
+  match "thankyou_webuy" => "homes#thankyou_webuy"
 
   resources :blog_comments do
     resources :blog_comments
@@ -53,17 +54,18 @@ Realestate::Application.routes.draw do
 
   resources :contacts
   
-  #resources :homes do
-  #  collection do
-  #    get 'sell', 'buy', 'lend', 'borrow'
-  #  end
-  #end
+  resources :homes do
+    collection do
+      get 'sell', 'buy', 'lend', 'borrow', 'thankyou_webuy'
+    end
+  end
 
   devise_for :users 
   
   #get "users/show"
   #get "homes/index"
   #get "home/get_interest"
+  get "homes/thankyou_webuy"
 
   resources :users, :only => :show
 

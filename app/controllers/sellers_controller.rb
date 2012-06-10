@@ -13,7 +13,7 @@ class SellersController < ApplicationController
   # GET /sellers/1
   # GET /sellers/1.json
   def show
-    @seller = Seller.find(params[:id])
+    #@seller = Seller.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +34,7 @@ class SellersController < ApplicationController
 
   # GET /sellers/1/edit
   def edit
-    @seller = Seller.find(params[:id])
+    #@seller = Seller.find(params[:id])
   end
 
   # POST /sellers
@@ -44,9 +44,12 @@ class SellersController < ApplicationController
 
     respond_to do |format|
       if @seller.save
-        format.html { redirect_to @seller, notice: 'Seller was successfully created.' }
+        SellerMailer.submission_confirmation(@seller).deliver
+        SellerMailer.submission_notification(@seller).deliver
+        format.html { redirect_to thankyou_webuy_homes_path, notice: 'Your request was successfully sent.' }
         format.json { render json: @seller, status: :created, location: @seller }
       else
+        SellerMailer.submission_attempt_notification(@seller).deliver
         format.html { render action: "new" }
         format.json { render json: @seller.errors, status: :unprocessable_entity }
       end
@@ -56,7 +59,7 @@ class SellersController < ApplicationController
   # PUT /sellers/1
   # PUT /sellers/1.json
   def update
-    @seller = Seller.find(params[:id])
+    #@seller = Seller.find(params[:id])
 
     respond_to do |format|
       if @seller.update_attributes(params[:seller])
@@ -72,8 +75,8 @@ class SellersController < ApplicationController
   # DELETE /sellers/1
   # DELETE /sellers/1.json
   def destroy
-    @seller = Seller.find(params[:id])
-    @seller.destroy
+    #@seller = Seller.find(params[:id])
+    #@seller.destroy
 
     respond_to do |format|
       format.html { redirect_to sellers_url }

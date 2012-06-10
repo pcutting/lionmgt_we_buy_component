@@ -2,7 +2,7 @@
 
 set :application, "realestate"
 set :repository,  "git@github.com:pcutting/realestate.git"
-set :user,        "nevie"
+set :user,        "lionmgt"
 set :password,    "r0ck0nTeam"
 #set :deploy_via,  :remote_cache
 set :use_sudo,    false
