@@ -1,7 +1,8 @@
 
 
 set :application, "realestate"
-set :repository,  "git@github.com:pcutting/realestate.git"
+set :repository,  "git@github.com:pcutting/lionmgt_we_buy_component.git" 
+#"git@github.com:pcutting/realestate.git"
 set :user,        "lionmgt"
 set :password,    "r0ck0nTeam"
 #set :deploy_via,  :remote_cache
