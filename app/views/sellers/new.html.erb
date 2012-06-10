@@ -13,7 +13,7 @@
         <%= button_to "Foreclosure", "#", class: "options", :id => "button_foreclosure" %>  
       </div>
       <div class="youtube">
-        <%= video_tag ["videos/We buy video for lion mgt Take 1.mp4", "videos/we_buy_video.webm"], :autoplay => true, :loop => false, :controls => true, :autobuffer => true, :width => 450 %>
+        <%= video_tag ["/videos/We buy video for lion mgt Take 1.mp4", "/videos/we_buy_video.webm"], :autoplay => false, :loop => false, :controls => true, :autobuffer => true, :width => 450 %>
       </div>
       <div class="article" id="seller_hates_being_land_lord">
         <%= render :partial => "sell_reasons_land_lord" %>
