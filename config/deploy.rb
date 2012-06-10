@@ -39,6 +39,7 @@ namespace :deploy do
   end
   
   task :precompile, :role => :app do  
+    
     run "cd #{release_path}/ && rake assets:precompile"  
   end  
   
@@ -48,7 +49,7 @@ end
 
 
 
-after 'deploy:update_code', 'deploy:symlink', 'deploy:precompile'
+#after 'deploy:update_code', 'deploy:symlink'#,  'deploy:precompile'
 
 
 
