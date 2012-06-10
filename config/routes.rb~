@@ -17,11 +17,11 @@ Realestate::Application.routes.draw do
     resources :blog_comments
   end
   
-  #resources :lenders
+  resources :lenders
 
-  #resources :borrowers
+  resources :borrowers
 
-  #resources :buyers
+  resources :buyers
 
   resources :sellers
 
@@ -41,23 +41,23 @@ Realestate::Application.routes.draw do
     resources :users  #TODO: this should be in admin name space
   end
 
-  #resources :prospective_properties do
-  #  collection do
-  #    put 'multiple_properties'
-  #  end
-  #end
+  resources :prospective_properties do
+    collection do
+      put 'multiple_properties'
+    end
+  end
   
   
 
-  #resources :labels
+  resources :labels
 
   resources :contacts
   
-  #resources :homes do
-  #  collection do
-  #    get 'sell', 'buy', 'lend', 'borrow'
-  #  end
-  #end
+  resources :homes do
+    collection do
+      get 'sell', 'buy', 'lend', 'borrow'
+    end
+  end
 
   devise_for :users 
   

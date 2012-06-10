@@ -5,6 +5,7 @@
  *= require_self
  *= require normalize
  *= require defaults
+ *= require errors
  *= require forms
  *= require blogs
  *= require borrowers

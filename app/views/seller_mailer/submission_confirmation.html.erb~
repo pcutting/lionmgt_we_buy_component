@@ -1,0 +1,9 @@
+<p>Dear <%= @seller.first_name %>,</p>
+
+<p>Thank you for submitting your property at <%= @seller.address %></p>
+
+<p>I'll be contacting you within 24 to 48 hours.</p>
+<p>Thank you,</p>
+<p>Phil Cutting</p>
+<p>phil@lionmgt.com</p>
+

@@ -6,7 +6,7 @@
   <% if @seller.errors.any? %>
     <div class="row2">
       <div id="error_explanation">
-        <h2><%= pluralize(@seller.errors.count, "error") %> prohibited this seller from being saved:</h2>
+        <h2><%= pluralize(@seller.errors.count, "error") %> are preventing your submission.  Please fill out the highlighted fields so that can contact you and start our research:</h2>
 
         <ul>
         <% @seller.errors.full_messages.each do |msg| %>

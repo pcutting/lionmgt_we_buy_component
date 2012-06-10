@@ -10,11 +10,10 @@
       <div class="article options">
         <%= button_to "Need to Sell Quick", "#", class: "options", :id => "button_sell_quick" %>
         <%= button_to "Hate Landlording", "#", class: "options", :id => "button_hates_landlording" %>
-        <%= button_to "Foreclosure", "#", class: "options", :id => "button_foreclosure" %>
-         
+        <%= button_to "Foreclosure", "#", class: "options", :id => "button_foreclosure" %>  
       </div>
       <div class="youtube">
-        YOUTube
+        <%= video_tag("We buy video for lion mgt Take 1.mp4", :autoplay => true, :loop => false, :controls => true, :autobuffer => true) %>
       </div>
       <div class="article" id="seller_hates_being_land_lord">
         <%= render :partial => "sell_reasons_land_lord" %>
