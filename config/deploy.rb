@@ -3,8 +3,8 @@
 set :application, "realestate"
 set :repository,  "git@github.com:pcutting/lionmgt_we_buy_component.git" 
 #"git@github.com:pcutting/realestate.git"
-set :user,        "lionmgt"
-set :password,    "r0ck0nTeam"
+set :user,        "lionwebuy" #"lionmgt"
+set :password,    "r0ck0n" #"r0ck0nTeam"
 #set :deploy_via,  :remote_cache
 set :use_sudo,    false
 set :normalize_asset_timestamps, false
@@ -50,7 +50,7 @@ end
 
 
 
-after 'deploy:update_code', 'deploy:symlink',  'deploy:precompile'
+after 'deploy:update_code', 'deploy:symlink'#,  'deploy:precompile'
 
 
 
